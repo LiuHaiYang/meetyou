@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="row" id="login">
+        <div class="col-md-4 col-lg-3">
+            <div class="login">
+                <div class="login_title">Sign in</div>
+                <form role="form" v-on:submit.prevent="onSubmit" autocomplete="on" novalidate="novalidate">
+                    <div class="form-group">
+                        <input type="email" name="email"  v-model="data.email"  class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"  name="password" v-model="data.password" class="form-control" placeholder="Password">
+                    </div>
+                    <button id="submit_login" type="submit" class="btn btn-primary" style="margin-top: 25px;">登陆</button>
+                    <a class="btn btn-primary" href="/zhucepage" style="width: 250px;margin-top: 5px;" >去注册</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        seajs.use("js/login",function () {
+            $(".body_show").show();
+        });
+    </script>
+{% endblock %}

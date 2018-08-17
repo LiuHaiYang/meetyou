@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{% block index %}
+    <div class="row">
+        <h3 style="margin-left: 34px" class="btn btn-primary">数据展示
+        </h3>
+    </div>
+    <div style="border: 1px solid #cccccc; width: 97%;margin-left: 20px;margin-top: 5px"></div>
+    <div id="run" class="box-center">
+        <div style="width: 97%;height: 458px">
+            <div style="float: left;width: 26%;background:#ccc;height: 445px;">
+                <label style="margin-top: 20px;margin-left: 15px;"><span style="font-size: larger">展示图表:</span>
+                        <select class="type-control" id="figure_data" style="margin-left: 16px;width: 200px">
+                            <option value="折线图">折线图</option>
+                            <option value="饼形图">饼形图</option>
+                            <option value="柱状图">柱状图</option>
+                            <option value="词云图">词云图</option>
+                            <option value="分布图">分布图</option>
+                        </select>
+                </label><br>
+                <label style="margin-top: 20px;margin-left: 15px;"><span style="font-size: larger">时间范围:</span></label>
+                <div id="divDateId" class="pull-left dateRange" style="margin-left: 107px;width: 200px;margin-top: -34px">
+                <input class="form-control" id="searchDate" ></input>
+                </div>
+                <br>
+                <label style="margin-top: 20px;margin-left: 15px;"><span style="font-size: larger">职位属性:</span>
+                        <select class="type-control" id="y_data" style="margin-left: 16px;width: 200px">
+                            <option value="学历">学历</option>
+                            <option value="薪资">薪资</option>
+                            <option value="工作经验">工作经验</option>
+                            <option value="工作地点">工作地点</option>
+                        </select>
+                </label><br>
+
+                <label style="margin-top: 20px;margin-left: 15px;"><span style="font-size: larger">关&nbsp;&nbsp;键&nbsp;&nbsp;词:</span>
+                    <input id="keyword" placeholder="职位名称(多个用;分割)" type="text" style="margin-left:10px;width: 200px;height: 32px">
+                </label><br>
+                <a class="btn btn-primary" id="show_data" style="width: 250px;margin-top: 20px;margin-left: 30px" >SHOW</a>
+            </div>
+            <div style="float: right;width: 72%;height: 415px;margin-left: 2px;margin-top: 45px">
+                 <div id="container" style="max-width:70%;height:400px"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts/modules/series-label.js"></script>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script type="text/javascript" src="https://img.hcharts.cn/highcharts/modules/wordcloud.js"></script>
+
+    <script src="/static/js/echarts/echarts.min.js"></script>
+    <script src="/static/js/echarts/china.js"></script>
+    <script src="/static/js/show_figure.js"></script>
+{% endblock %}

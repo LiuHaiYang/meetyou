@@ -1,0 +1,33 @@
+<ul v-if="isLogin" class="nav navbar-nav" id="nav_nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">概括<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="/home/alldata">ALL JOBS</a></li>
+            <div class="divider"></div>
+            <li><a href="/home/newdata">最新</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="/userdata" class="dropdown-toggle" >用户管理</a>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">推荐管理<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="/recommend_perinfo_all">信息管理</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">数据程序<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="/getjobsdata_run_his">运行程序列表</a></li>
+            <div class="divider"></div>
+            <li><a href="">脚本管理</a></li>
+            <div class="divider"></div>
+            <li><a href="">脚本查看</a></li>
+        </ul>
+    </li>
+</ul>

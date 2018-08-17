@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block index %}
+   <div class="row">
+        <h3 style="margin-left: 3%" class="btn btn-primary">数据汇总
+        </h3>
+   <div style="border: 1px solid #cccccc; width: 96%;margin-left: 2%;margin-top: 5px"></div>
+    </div>
+    <div>
+        <table style="width: 96%;margin: auto;margin-top: 25px" class="table table-bordered table-hover table-responsive">
+            <thead style="background-color: #2e6da4">
+            <tr>
+                <th style="color: white" nowrap>发布网站</th>
+                <th style="color: white" nowrap>近七天</th>
+                <th style="color: white" nowrap>近一月</th>
+                <th style="color: white" nowrap>汇总</th>
+                <th style="color: white" nowrap>已过期</th>
+                <th style="color: white" nowrap>汇总截至时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in datas %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>{{ i[1]  }}</td>
+                    <td>{{  i[2] }}</td>
+                    <td>{{  i[3] }}</td>
+                    <td>{{  i[4] }}</td>
+                    <td>{{  i[5] }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

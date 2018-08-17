@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="row" id="login">
+        <div class="col-md-4 col-lg-3">
+            <div class="login" style="width: 600px;margin-left: -110px">
+                 <div class="login_title"><h3>注册</h3></div>
+                   <h4 style="margin-left: 100px;">邮&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱&nbsp&nbsp  <input  id="email" type="text" style="border: 1px solid #cccccc;height: 35px;padding-left: 5px;width: 200px"/></h4>
+                   <h4 style="margin-left: 100px;">密&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp码&nbsp&nbsp  <input  id="pwd" type="password" style="border: 1px solid #cccccc;height: 35px;padding-left: 5px;width: 200px"/></h4>
+                   <h4 style="margin-left: 100px;">确认密码&nbsp&nbsp<input  id="pwd_t" type="password" style="border: 1px solid #cccccc;height: 35px;padding-left: 5px;width: 200px"/></h4>
+                   <h4 style="margin-left: 100px;">手机号码&nbsp&nbsp<input  id="number" type="text" style="border: 1px solid #cccccc;height: 35px;padding-left: 5px;width: 200px"/></h4>
+                   <h4 style="margin-left: 100px;">验证号码&nbsp&nbsp<input  id="yanzheng" type="text" style="border: 1px solid #cccccc;height: 35px;padding-left: 5px;width: 200px"/></h4>
+                    <h4 style="margin-left: 100px;">注册角色
+                        <select class="type-control" id="zhuce_player" style="margin-left: 5px;width: 200px">
+                            <option value="0">普通用户</option>
+                            <option value="1">管理员</option>
+                        </select>
+                    </h4><br>
+                <a class="btn btn-primary" id="zhuce_user" style="width: 282px;margin-top: 10px;margin-left: 100px;" >注册</a>
+                <a class="btn btn-primary"  style="width: 282px;margin-top: 10px;margin-left: 100px;" href="#" onClick="javaScript:history.go(-1)">去登陆</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="/static/js/zhuce.js"></script>
+{% endblock %}

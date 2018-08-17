@@ -1,0 +1,105 @@
+{% extends "index.html" %}
+{% block index %}
+        <div class="row">
+        <h3 style="margin-left: 3%" class="btn btn-primary">拉勾网
+        </h3>
+    </div>
+    <div style="border: 1px solid #cccccc; width: 96%;margin-left: 2%;margin-top: 5px"></div>
+    <div id="web_lagou" class="box-center">
+        <div class="row" style="margin-top: 30px">
+        <div class="col-lg-12">
+            <div class="panel panel-default" style="width: 100%;">
+                <div class="panel-body" style="width: 1300px">
+                    <div class="dataTable_wrapper">
+                        <table class="display" cellspacing="0" width="100%" id="dataTable">
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    </div>
+   <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="height:  623px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">招聘详情</h4>
+                </div>
+                <div style="border: 1px solid #cccccc"></div>
+                <div class="modal-body" style="margin-left: 20% ;height: 505px">
+                    <div style="float: left;margin-left: -190px">
+                        <label style="margin-top: 10px;margin-left: 62px" hidden>
+                         <input id="zhaopinid" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>招聘职位:</span>
+                         <input id="zhaopinzhiwei" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>公司名称:</span>
+                            <input id="companyname" disabled="disabled" type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+
+                        </label>
+                        <br>
+                         <label style="margin-top: 10px;margin-left: 62px"><span>融资阶段:</span>
+                             <input id="rongzi"  disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>发布时间:</span>
+                            <input id="fabutime" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left:20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                    </div>
+
+                    <div style="float: right;margin-right: 110px">
+
+                        <label style="margin-top: 10px;margin-left: 62px"><span>职位诱惑:</span>
+                            <input id="jobyouhuo" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                         <label style="margin-top: 10px;margin-left: 62px"><span>学历要求:</span>
+                             <input id="xueli" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>薪资范围:</span>
+                            <input id="money" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>工作经验:</span>
+                            <input id="worktime" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 250px;height: 30px;padding-left: 10px">
+                        </label>
+                    </div>
+                    <div style="margin-left: -190px;">
+                         <label style="margin-top: 10px;margin-left: 62px"><span>公司地址:</span>
+                             <input id="companyaddress" disabled="disabled"   type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 700px;height: 30px;padding-left: 10px">
+                        </label>
+                        <br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>职位要求:</span>
+                            <input id="jobyaoqiu" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 700px;height: 50px;padding-left: 10px">
+                        </label>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>工作职责:</span>
+                            <input id="workzhize" disabled="disabled"   type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 700px;height: 50px;padding-left: 10px">
+                        </label><br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>职位描述:</span>
+                            <input id="jobdesc" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 700px;height: 50px;padding-left: 10px">
+                        </label><br>
+                        <label style="margin-top: 10px;margin-left: 62px"><span>公司简介:</span>
+                            <input id="companyjianjie" disabled="disabled"  type="text" style="border: 1px solid #cccccc;margin-left: 20px;border-radius: 4px;width: 700px;height: 50px;padding-left: 10px">
+                        </label><br>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addlove" style="margin-left: auto">加入喜爱</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: auto">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/fabu_web_lagou.js"></script>
+{% endblock %}

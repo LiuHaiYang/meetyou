@@ -1,0 +1,95 @@
+{% extends "index.html" %}
+{% block index %}
+   <div class="row">
+        <h3 style="margin-left: 3%" class="btn btn-primary">地区分析
+        </h3>
+   <div style="border: 1px solid #cccccc; width: 96%;margin-left: 2%;margin-top: 5px"></div>
+    </div>
+    <div>
+        <div id="container" style="height: 400px; margin: auto; min-width: 310px; max-width: 600px"></div>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script>
+            var chart = Highcharts.chart('container', {
+            chart: {
+                    type: 'boxplot'
+            },
+            title: {
+                    text: 'Boxplot grouped by City AvgSalary'
+            }, credits: {
+                  enabled:false
+            },
+            legend: {
+                    enabled: false
+            },
+            xAxis: {
+                    categories: ['上海','北京', '深圳', '广东', '西安'],
+                    title: {
+                            text: ''
+                    }
+            },
+            yAxis: {
+                            title: {
+                                    text: '薪资'
+                            },
+                        plotLines: [{
+                                value: 10000,
+                                color: 'red',
+                                width: 1,
+                                label: {
+                                        text: ' ',
+                                        align: 'center',
+                                        style: {
+                                                color: 'gray'
+                                        }
+                                }
+                        }]
+                },
+                tooltip: {
+                        pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {series.name}</b><br/>' + // eslint-disable-line no-dupe-keys
+                        '薪资最大值: {point.high}<br/>' +
+                        'Q2\t: {point.q3}<br/>' +
+                        '薪资中位数: {point.median}<br/>' +
+                        'Q1\t: {point.q1}<br/>' +
+                        '薪资最小值: {point.low}<br/>'
+                },
+                series: [{
+                        name: '薪资值',
+                        data: [
+                                [11000, 12000, 13000, 15000, 16000],
+                                [11000, 13000, 15000, 16000, 18000],
+                                [12000, 13000, 14000, 18000, 20000],
+                                [17000, 19000, 20000, 24000, 25000],
+                                [11000, 14000, 18000, 20000, 21000]
+                        ],
+                        tooltip: {
+                                headerFormat: '<em>城市： {point.key}</em><br/>'
+                        }
+                }, {
+                        name: '异常值',
+                        color: Highcharts.getOptions().colors[0],
+                        type: 'scatter',
+                        data: [ // x, y positions where 0 is the first category
+                                [0, 7000],
+                                [1, 20000],
+                                [1, 25000],
+                                [1, 30000],
+                                [3, 30000],
+                                [3, 31000],
+                                [3, 11000],
+                                [4, 9000]
+                        ],
+                        marker: {
+                                fillColor: 'white',
+                                lineWidth: 1,
+                                lineColor: Highcharts.getOptions().colors[0]
+                        },
+                        tooltip: {
+                                pointFormat: 'Observation: {point.y}'
+                        }
+                }]
+        });</script>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block index %}
+    {% if session.leval ==0 %}
+        <div id="index" class="box-center">
+                欢迎登录Ocean JOBS系统
+        </div>
+    {% else %}
+        <div id="index" class="box-center">
+            欢迎登录Ocean JOBS管理系统
+        </div>
+    {% endif %}
+{% endblock %}
