@@ -16,13 +16,13 @@ def send_email(email,sub):
     msg["Accept-Language"] = "zh-CN"
     msg["Accept-Charset"] = "ISO-8859-1,utf-8"
 
-    msg['from'] = 'oceango@126.com'
+    msg['from'] = ''
     msg['subject'] = str(sub)
     mail_to = email
     msg['To'] = mail_to
-    mail_from = "oceango@126.com"
+    mail_from = ""
     smtp = smtplib.SMTP()
     smtp.connect('smtp.126.com',25)
-    smtp.login('oceango@126.com', '799899onA')
+    smtp.login('', '')
     smtp.sendmail(mail_from, mail_to, msg.as_string())
     smtp.quit()
